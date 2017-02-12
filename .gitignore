@@ -20,6 +20,10 @@ ExportedObj/
 *.booproj
 *.svd
 
+# Blender generated files
+*.blend1
+*.blend1.meta
+
 # Unity3D generated meta files
 *.pidb.meta
 

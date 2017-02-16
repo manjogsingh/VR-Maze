@@ -5,14 +5,16 @@ using UnityEngine.EventSystems;
 public class Coin : MonoBehaviour 
 {
     public GameObject coinPoof;
-    //Create a reference to the CoinPoofPrefab
+    public AudioClip coinsound;
 
     public void OnCoinClicked() {
+
+        gameObject.GetComponent<AudioSource>().Play();
+
         Instantiate(coinPoof,transform.position,Quaternion.identity);
-        Destroy(gameObject);
-        // Instantiate the CoinPoof Prefab where this coin is located
-        // Make sure the poof animates vertically
-        // Destroy this coin. Check the Unity documentation on how to use Destroy
+        
+        gameObject.GetComponent<MeshRenderer>().enabled=false;
+        gameObject.GetComponent<Collider>().enabled=false;
     }
 
 }

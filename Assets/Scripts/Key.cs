@@ -13,13 +13,14 @@ public class Key : MonoBehaviour
 	public void OnKeyClicked()
 	{
         Instantiate(keyPoof,transform.position,Quaternion.identity);
-        keyState=true;
-        door.GetComponent<Door>().Unlock();
-        Destroy(gameObject);
-    }
-    /*public bool KeyState()
-    {
-        return keyState;
-    }*/
 
+        keyState=true;
+
+        door.GetComponent<Door>().Unlock();
+
+        gameObject.GetComponent<AudioSource>().Play();
+
+        gameObject.GetComponent<MeshRenderer>().enabled=false;
+        gameObject.GetComponent<Collider>().enabled=false;
+    }
 }

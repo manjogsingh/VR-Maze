@@ -19,5 +19,7 @@ public class UI : MonoBehaviour {
 		
 		if(OpenChest.chestState==true)
 			canvas.SetActive(false);
+		else
+			canvas.SetActive(true);
 	}
 }

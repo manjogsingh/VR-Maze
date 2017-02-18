@@ -7,7 +7,11 @@ public class OpenChest : MonoBehaviour {
 	public GameObject Canvas;
 	public ParticleSystem part1;
 	public ParticleSystem part2;
-	public static bool chestState=false;
+	public static bool chestState;
+	void Start()
+	{
+		chestState=false;
+	}
 	public void ChestAnimation()
 	{
 		chestState=true;
@@ -15,5 +19,6 @@ public class OpenChest : MonoBehaviour {
 		Canvas.GetComponent<Animator>().Play("Canvas");
 		part1.Play();
 		part2.Play();
+		gameObject.GetComponent<AudioSource>().Play();
 	}
 }

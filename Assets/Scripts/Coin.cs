@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class Coin : MonoBehaviour 
 {
+    public static int coinCount=0;
     public GameObject coinPoof;
-    public AudioClip coinsound;
-
     public void OnCoinClicked() {
+
+        coinCount++;
 
         gameObject.GetComponent<AudioSource>().Play();
 

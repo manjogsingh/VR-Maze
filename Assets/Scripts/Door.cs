@@ -1,43 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Door : MonoBehaviour 
 {
-    // Create a boolean value called "locked" that can be checked in Update() 
-    bool locked;
+    public static bool locked;
     bool open;
     public AudioClip doorOpen;
     public AudioClip doorClosed;
+    AudioSource source;
     Animator anim;
+
+    public Text doorMessage;
     void Start()
     {
         locked=true;
         open=false;
         anim=transform.GetComponent<Animator>();
+        source=gameObject.GetComponent<AudioSource>();
     }
     void Update() {
         
         if(locked==false)
         {
-            if(open==true)
-            {
-                anim.Play("Open");
-                gameObject.GetComponent<BoxCollider>().enabled=false;
-                gameObject.GetComponent<AudioSource>().clip=doorOpen;
-                gameObject.GetComponent<AudioSource>().Play();
-            }
+            open=true;
         }
-        else
-        {
-            gameObject.GetComponent<AudioSource>().clip=doorClosed;
-            gameObject.GetComponent<AudioSource>().Play();
-            //cannot open msg
-            //also sound
-            //audiosource.PlayOneShot(doorClosed);
-        }
-        // If the door is unlocked and it is not fully raised
-            // Animate the door raising up
     }
 
     public void Unlock()
@@ -50,11 +37,27 @@ public class Door : MonoBehaviour
         {
             locked=true;
         }
-        // You'll need to set "locked" to false here
     }
 
     public void OpenGate()
     {
-        open=true;
+        if(open==true)
+        {
+            anim.Play("Open");
+            gameObject.GetComponent<BoxCollider>().enabled=false;
+            source.clip=doorOpen;
+            source.Play();
+        }
+        else
+        {
+            doorMessage.text="Can't open without key";
+            Invoke("DoorText",2.0f);
+            source.clip=doorClosed;
+            source.Play();
+        }
+    }
+    void DoorText()
+    {
+        doorMessage.text="";
     }
 }

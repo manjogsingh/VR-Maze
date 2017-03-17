@@ -8,11 +8,11 @@ This is a VR maze environment to play in android and ios devices. This project i
 * Particle system which enhances the look of whole setup
 
 ## Screenshots
-<p><center><img src="Screenshots/Screenshot_20170219-000619.png" width="600"></center></p>
-<p><center><img src="Screenshots/Screenshot_20170219-000759.png" width="600"></center></p>
-<p><center><img src="Screenshots/Screenshot_20170219-000814.png" width="600"></center></p>
-<p><center><img src="Screenshots/Screenshot_20170219-000838.png" width="600"></center></p>
-<p><center><img src="Screenshots/Screenshot_20170219-000903.png" width="600"></center></p>
+<p align="center"><img src="Screenshots/Screenshot_20170219-000619.png" width="600"></p>
+<p align="center"><img src="Screenshots/Screenshot_20170219-000759.png" width="600"></p>
+<p align="center"><img src="Screenshots/Screenshot_20170219-000814.png" width="600"></p>
+<p align="center"><img src="Screenshots/Screenshot_20170219-000838.png" width="600"></p>
+<p align="center"><img src="Screenshots/Screenshot_20170219-000903.png" width="600"></p>
 
 ## Steps to run project
 1. Import Google VR SDK
